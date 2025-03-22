@@ -1,0 +1,36 @@
+
+---
+
+### 🧾 `.gitignore`
+
+```gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code
+.vscode/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# PyInstaller
+dist/
+build/
+*.spec
+
+# Vercel
+.vercel
+
+# Sistema
+*.log
+
+# Arquivos temporários
+uploads/
