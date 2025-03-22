@@ -2,3 +2,5 @@ fastapi
 pillow
 jinja2
 mangum
+uvicorn
+python-multipart
