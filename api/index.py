@@ -14,8 +14,8 @@ app = FastAPI()
 UPLOAD_FOLDER = "/tmp/uploads"  # no Vercel só podemos escrever em /tmp
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="api/static"), name="static")
+templates = Jinja2Templates(directory="api/templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
