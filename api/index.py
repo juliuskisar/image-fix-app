@@ -8,7 +8,13 @@ import shutil
 from uuid import uuid4
 from mangum import Mangum
 
+
+
+
+
 app = FastAPI()
+# Adaptador para AWS Lambda/Vercel
+handler = Mangum(app)
 
 # Pastas
 UPLOAD_FOLDER = "/tmp/uploads"  # no Vercel só podemos escrever em /tmp
@@ -67,5 +73,5 @@ async def download(filename: str):
     caminho = os.path.join(UPLOAD_FOLDER, filename)
     return FileResponse(caminho, media_type="image/jpeg", filename=filename)
 
-# Adaptador para AWS Lambda/Vercel
-handler = Mangum(app)
+# # Adaptador para AWS Lambda/Vercel
+# handler = Mangum(app)
