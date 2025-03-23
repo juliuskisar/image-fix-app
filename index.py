@@ -6,7 +6,7 @@ from PIL import Image, ExifTags
 import os
 import shutil
 from uuid import uuid4
-from mangum import Mangum
+# from mangum import Mangum
 
 
 
@@ -17,8 +17,8 @@ app = FastAPI()
 UPLOAD_FOLDER = "/tmp/uploads"  # no Vercel só podemos escrever em /tmp
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-app.mount("/static", StaticFiles(directory="api/static"), name="static")
-templates = Jinja2Templates(directory="api/templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
@@ -70,5 +70,5 @@ async def download(filename: str):
     caminho = os.path.join(UPLOAD_FOLDER, filename)
     return FileResponse(caminho, media_type="image/jpeg", filename=filename)
 
-# Adaptador para AWS Lambda/Vercel
-handler = Mangum(app)
+# # Adaptador para AWS Lambda/Vercel
+# handler = Mangum(app)

@@ -1,15 +1,14 @@
 {
-    "builds": [
-      {
-        "src": "api/index.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      { "src": "/static/(.*)", "dest": "/static/$1" },
-      { "src": "/upload", "methods": ["POST"], "dest": "/api/index.py" },
-      { "src": "/download/(.*)", "dest": "/api/index.py" },
-      { "src": "/", "dest": "/api/index.py" }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "index.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.py"
+    }
+  ]
+}
