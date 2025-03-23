@@ -15,3 +15,8 @@ button {
     display: block;
     margin: 5px;
 }
+.sobrinha {
+    width: 200px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
